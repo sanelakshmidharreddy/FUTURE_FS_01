@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Badge } from "@/src/components/ui/badge";
+import { Badge } from "@/components/ui/badge";
 
 const projects = [
   { title: "Likitha Ladies Beauty Parlour", description: "Engineered a responsive website with WhatsApp booking integration, streamlining client scheduling and enhancing digital visibility.", link: "https://likitha-beauty-parlour.netlify.app/", tech: ["React", "Tailwind CSS", "WhatsApp API", "Responsive Web Design"] },

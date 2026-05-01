@@ -1,4 +1,4 @@
-import { Badge } from "@/src/components/ui/badge";
+import { Badge } from "@/components/ui/badge";
 
 export const Skills = () => (
   <section className="py-20 px-6 max-w-4xl mx-auto">

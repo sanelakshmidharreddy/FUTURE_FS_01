@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/src/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export const Experience = () => (
   <section className="py-20 px-6 max-w-4xl mx-auto">

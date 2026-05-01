@@ -1,8 +1,8 @@
 import { useState, useRef, FormEvent } from "react";
 import emailjs from '@emailjs/browser';
-import { Input } from "@/src/components/ui/input";
-import { Textarea } from "@/src/components/ui/textarea";
-import { Button } from "@/src/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
 import { Linkedin, Github, Loader2 } from 'lucide-react';
 
 export const Contact = () => {
@@ -36,13 +36,19 @@ export const Contact = () => {
         setLoading(true);
 
         try {
-            emailjs.init('PIRLSdxNMnaqw39Nz');
+            const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+            const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+            const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+
+            emailjs.init(publicKey);
+
             await emailjs.sendForm(
-                'service_qwlz2ix',
-                'template_736diup',
+                serviceId,
+                templateId,
                 formRef.current,
-                'PIRLSdxNMnaqw39Nz'
+                publicKey
             );
+
             setMessage({ text: "Message sent successfully 🚀", type: 'success' });
             formRef.current.reset();
         } catch (error) {
